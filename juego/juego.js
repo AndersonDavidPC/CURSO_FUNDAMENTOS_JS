@@ -7,12 +7,22 @@ const btnEmpezar=document.getElementById('btnEmpezar')
 class Juego {
   constructor() {
     this.inicializar()
+    this.generarSecuencia()
   }
   inicializar(){
     btnEmpezar.classList.add('hide')
+    this.nivel=1
+    this.colores={
+      celeste,
+      violeta,
+      naranja,
+      verde
+    }
+  }
+  generarSecuencia(){
+    this.secuencia=new Array(10).fill(0).map(n=>Math.floor(Math.random()*4))
   }
 }
 function empezarJuego() {
-  // alert('El juego va a comenzar')
-  var juego=new Juego()
+  window.juego=new Juego()
 }
